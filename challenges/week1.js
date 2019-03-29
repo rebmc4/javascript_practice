@@ -45,27 +45,43 @@ function reverseWord(word) {
 }
 
 function reverseAllWords(words) {
+  const arr = words.reverse; 
   if (words === undefined) throw new Error("words is required");
-  var splitWords = words.split([]); 
-  var reverse = splitWords.reverse([]);
-  var join = reverse.join([]);
-  return join;
+  for (let i = 0; i > arr; i++)
+  return words; 
 }
+
 
 function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
-  // Add your code here!
+    let total = 0;
+    users.forEach(function (user) {
+const machineType = user.type; 
+if (machineType === "Linux") {
+  total += 1;
+}
+});
+return total;
 }
 
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
-  // Add your code here!
+    var total = 0, i;
+    for (i = 0; i < scores.length; i += 1)
+        total += scores[i];
+    return total / scores.length;
 }
 
 function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
-  // Add your code here!
+  var str = "simplefizzbuzz";
+var num = 0; 
+if (num % 3 === 0); {
+str = (str.slice(6,10)); 
 }
+};
+
+
 
 module.exports = {
   capitalize,
