@@ -45,10 +45,11 @@ function reverseWord(word) {
 }
 
 function reverseAllWords(words) {
-  const arr = words.reverse; 
   if (words === undefined) throw new Error("words is required");
-  for (let i = 0; i > arr; i++)
-  return words; 
+  var splitWords = words.split(""); 
+  var reverse = splitWords.reverse();
+  var join = reverse.join("");
+  return join;
 }
 
 
