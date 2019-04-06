@@ -12,14 +12,20 @@ function generateInitials(firstName, lastName) {
 function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
-  return (originalPrice * (vatRate/100)) + (originalPrice); 
-  }
+  const result = (originalPrice * (vatRate/100)) + (originalPrice); 
+  return parseFloat(result.toFixed(2));
+}
   
-function getSalePrice(originalPrice, reduction) {
-  if (originalPrice === undefined) throw new Error("originalPrice is required");
-  if (reduction === undefined) throw new Error("reduction is required");
-  return (originalPrice) - (originalPrice * (reduction/100));
+  function getSalePrice(originalPrice, reduction) {
+    if (originalPrice === undefined) throw new Error("originalPrice is required");
+    if (reduction === undefined) throw new Error("reduction is required");
+    const result = (originalPrice) - (originalPrice * (reduction/100));
+    return parseFloat(result.toFixed(2)); 
   }
+    // reduces a price 100 by 33.3% 
+  // reduces a price of 79.99 by 15%
+  // reduce price of 50 by 0%
+
 
 function getMiddleCharacter(str) {
   if (str === undefined) throw new Error("str is required");

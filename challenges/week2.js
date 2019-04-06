@@ -1,14 +1,15 @@
 function getFillings(sandwich) {
   if (sandwich === undefined) throw new Error("ingredients is required")
+  const sandwichFillings = sandwich.fillings;
+  return sandwichFillings;
+}
 
-  }
 
 function isFromManchester(person) {
   if (person === undefined) throw new Error("person is required");
-  if (person.city === "Manchester"){
-    return true
-  } else return false
-  }
+  const McrPeople = person.city;
+  return McrPeople === "Manchester"
+}
 
 function getBusNumbers(people) {
   if (people === undefined) throw new Error("people is required"); 
@@ -22,7 +23,8 @@ function countSheep(arr) {
 
 function hasMPostCode(person) {
   if (person === undefined) throw new Error("person is required");
-  // Your code here!
+  const firstLetter = person.address.postCode[0];
+  return firstLetter === "M" && person.address.city === "Manchester"; 
 }
 
 module.exports = {
