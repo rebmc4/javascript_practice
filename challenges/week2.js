@@ -16,10 +16,11 @@ function getBusNumbers(people) {
   return Math.ceil(people/40);
   }
 
-function countSheep(arr) {
-  if (!arr) throw new Error("arr is required");
-  // Your code here!
-}
+  function countSheep(arr) {
+    if (!arr) throw new Error("arr is required");
+    const s = arr.filter(s => s === "sheep"); 
+    return(s.length); 
+  }
 
 function hasMPostCode(person) {
   if (person === undefined) throw new Error("person is required");
