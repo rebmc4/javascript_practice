@@ -35,9 +35,9 @@ function getMiddleCharacter(str) {
         position = str.length / 2;
         length = 1;
     } else {
-        position = str.length / 2 - 1;
-        length = 2;
-    }
+          position = str.length / 2 - 1;
+          length = 2;
+      }
     return str.substring(position, position + length)
 }     
 
@@ -60,22 +60,25 @@ function reverseAllWords(words) {
 
 function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
-  let total = 0;
-  users.forEach(function (user) {
-    const machineType = user.type; 
-    if (machineType === "Linux") {
-      total += 1;
+  // Add your code here!
+    let total = 0;
+    users.forEach(function (user) {
+      const machineType = user.type; 
+      if (machineType === "Linux") {
+         total += 1;
     }
-  });
-  return total;
+});
+return total;
 }
+
 
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
   var total = 0, i;
-  for (i = 0; i < scores.length; i += 1)
-  total += scores[i];
-  return total / scores.length;
+  for (i = 0; i < scores.length; i += 1){
+      total += scores[i];
+      return total / scores.length; 
+      }
 }
 
 function simpleFizzBuzz(n) {
