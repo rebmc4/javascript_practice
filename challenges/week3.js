@@ -33,7 +33,7 @@ function duplicateNumbers(arr1, arr2) {
           if (arr1[i] === arr2[e] ) dupe.push(arr1[i]);
           }
       }
-  return dupe.sort();
+  return dupe.sort() && dupe.filter((e,i)=> dupe.indexOf(e) >= i)
 }
 
 
