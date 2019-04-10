@@ -1,7 +1,12 @@
 function getSquares(nums) {
   if (!nums) throw new Error("nums is required");
-  const sqNums = nums.map(function (nums){return nums*nums;});
-  return sqNums; 
+  const squaredNums = [];
+
+  nums.forEach(function(num){
+      const squared = num * num;
+      squaredNums.push(squared);
+    });
+  return squaredNums;
 }
 
 function camelCaseWords(words) {
@@ -21,19 +26,36 @@ function getTotalSubjects(people) {
 function checkIngredients(menu, ingredient) {
   if (!menu) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
-  // Your code here!
+  let foundFoodItem = false; 
+
+  menu.forEach(function (menuItem){
+    menuItem.ingredients.forEach(function (menuItemIngredient){
+        if (menuItemIngredient === ingredient) {
+          foundFoodItem = true; 
+        }
+      });
+    });
+  
+    return foundFoodItem; 
 }
 
 function duplicateNumbers(arr1, arr2) {
   if (!arr1) throw new Error("arr1 is required");
   if (!arr2) throw new Error("arr2 is required");
-  var dupe = [];
-  for ( var i = 0; i < arr1.length; i++ ) {
-      for ( var e = 0; e < arr2.length; e++ ) {
-          if (arr1[i] === arr2[e] ) dupe.push(arr1[i]);
-          }
+
+  const duplicates = [];
+
+  arr1.forEach(function (num) {
+    const numIsInArr2 = arr2.includes(num);
+      if (numIsInArr2) {
+      const duplicatesContainsNum = duplicates.includes(num); 
+        if (duplicatesContainsNum === false) {
+        duplicates.push(num);
       }
-  return dupe.sort() && dupe.filter((e,i)=> dupe.indexOf(e) >= i)
+    }
+  });
+
+  return duplicates.sort(function (a, b) {return a-b});
 }
 
 
